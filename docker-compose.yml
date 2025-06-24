@@ -4,7 +4,6 @@ services:
   db:
     image: postgres:15-alpine
     container_name: messaging_db
-    restart: always
     environment:
       POSTGRES_USER: minh271003
       POSTGRES_PASSWORD: minh210513
@@ -13,6 +12,20 @@ services:
       - '5432:5432'
     volumes:
       - db_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: messaging_app
+    ports:
+      - '8000:8000'
+    environment:
+      DB_USER: minh271003
+      DB_PASSWORD: minh210513
+      DB_NAME: messaging
+      DB_HOST: db
+      PORT: 8000
+    depends_on:
+      - db
 
 volumes:
   db_data:

@@ -12,6 +12,10 @@ app.use('/message-recipients', require('../routes/recipientRoutes'));
 
 const PORT = process.env.PORT || 8000;
 
+app.get('/', (req, res) => {
+  res.send('🚀 Messaging API is running!');
+});
+
 app.listen(PORT, async () => {
   try {
     await sequelize.authenticate();
