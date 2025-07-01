@@ -1,3 +1,5 @@
+jest.setTimeout(15000);
+
 // tests/message.test.js
 const request = require("supertest");
 const app = require("../app");

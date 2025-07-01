@@ -18,14 +18,11 @@ services:
     container_name: messaging_app
     ports:
       - '8000:8000'
-    environment:
-      DB_USER: minh271003
-      DB_PASSWORD: minh210513
-      DB_NAME: messaging
-      DB_HOST: db
-      PORT: 8000
     depends_on:
       - db
+    environment:
+      DATABASE_URL: postgres://minh271003:minh210513@db:5432/messaging
+      PORT: 8000
 
 volumes:
   db_data:
