@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: minh210513
       POSTGRES_DB: messaging
     ports:
-      - '5432:5432'
+      - '5422:5422'
     volumes:
       - db_data:/var/lib/postgresql/data
 
