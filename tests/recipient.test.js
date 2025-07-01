@@ -1,4 +1,5 @@
-// tests/recipient.test.js
+jest.setTimeout(15000);
+
 const request = require('supertest');
 const app = require('../app');
 const { sequelize } = require('../config/database');

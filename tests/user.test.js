@@ -1,3 +1,5 @@
+jest.setTimeout(15000);
+
 const request = require('supertest');
 const express = require('express');
 const { sequelize } = require('../config/database');

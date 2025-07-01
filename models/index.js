@@ -1,3 +1,5 @@
+const sequelize = require('../config/database'); // 👈 THÊM DÒNG NÀY
+
 const User = require('./User');
 const Message = require('./Message');
 const MessageRecipient = require('./MessageRecipient');
@@ -13,6 +15,7 @@ User.hasMany(MessageRecipient, { foreignKey: 'recipient_id' });
 MessageRecipient.belongsTo(User, { foreignKey: 'recipient_id', as: 'recipient' });
 
 module.exports = {
+  sequelize, // 👈 PHẢI EXPORT RA!
   User,
   Message,
   MessageRecipient,
